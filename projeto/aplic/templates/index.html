@@ -1,1 +1,48 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural Escolar</title>
+    <style>
+        .turma-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .turma-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            width: 250px; /* Ajuste a largura conforme necessário */
+            height: auto;
+        }
+        .turma{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mural AFS</h1>
+    <h3>Postagem de avisos para pais e alunos</h3>
+    <div class="turma-container">
+        {% for turma, cards in cards_por_turma.items %}
+            <div class="turma-column">
+                <h2 class="turma">{{ turma }}</h2>
+                {% for card in cards %}
+                    <div class="card">
+                        <h3>{{ card.title }}</h3>
+                        <p>{{ card.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
