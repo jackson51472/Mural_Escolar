@@ -31,18 +31,24 @@
 <body>
     <h1>Mural AFS</h1>
     <h3>Postagem de avisos para pais e alunos</h3>
-    <div class="turma-container">
-        {% for turma, cards in cards_por_turma.items %}
-            <div class="turma-column">
-                <h2 class="turma">{{ turma }}</h2>
-                {% for card in cards %}
-                    <div class="card">
-                        <h3>{{ card.title }}</h3>
-                        <p>{{ card.content }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        {% endfor %}
-    </div>
+   
+
+
+
+<div class="turma-container">
+    {% for turma, cards in cards_por_turma.items %}
+        <div class="turma-column">
+            <h2 class="turma-name">{{ turma }}</h2>
+            {% for card in cards %}
+                <div class="card">
+                    <h3>{{ card.title }}</h3>
+                    <h5>Data: {{ card.data }}  &nbsp; &nbsp; Hora:{{ card.hora }}</h5>
+                    <hr>
+                    <p>{{ card.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
 </body>
 </html>
