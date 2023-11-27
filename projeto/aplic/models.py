@@ -50,3 +50,11 @@ class Postagem(models.Model):
     turma = models.IntegerField(choices=TurmaChoices.choices, default=TurmaChoices.TODAS)
     responsavel = models.ForeignKey(User, blank=True, default=None, null=True, on_delete= models.DO_NOTHING)
 
+    class Meta:    
+        verbose_name = _('Postagem')
+        verbose_name_plural = _('Postagem')
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.assunto} | {self.data}"
+
