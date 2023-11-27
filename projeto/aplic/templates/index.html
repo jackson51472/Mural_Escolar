@@ -36,15 +36,15 @@
 
 
 <div class="turma-container">
-    {% for turma, cards in cards_por_turma.items %}
+    {% for x, i in cards_por_turma.items %}
         <div class="turma-column">
-            <h2 class="turma-name">{{ turma }}</h2>
-            {% for card in cards %}
+            <h2 class="turma-name">{{ x }}</h2>
+            {% for j in i %}
                 <div class="card">
-                    <h3>{{ card.title }}</h3>
-                    <h5>Data: {{ card.data }}  &nbsp; &nbsp; Hora:{{ card.hora }}</h5>
+                    <h3>{{ j.assunto }}</h3>
+                    <h5>Data: {{ j.data }}  &nbsp; &nbsp;</h5>
                     <hr>
-                    <p>{{ card.content }}</p>
+                    <p>{{ j.conteudo }}</p>
                 </div>
             {% endfor %}
         </div>

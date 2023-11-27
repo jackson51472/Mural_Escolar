@@ -16,7 +16,7 @@ class User(models.Model):
     nome = models.CharField(_("Nome"), blank=False, max_length=50,)
     cpf = models.CharField(_("cpf"), blank=False, max_length=11, unique=True)
     matricula = models.CharField(_("Número Matricula"), blank=False, max_length=50,)
-    email = models.EmailField(_("Email"), blank=False, max_length=11, unique=True,)
+    email = models.EmailField(_("Email"), max_length=200, unique=True,)
     cargo = models.IntegerField(choices=SistemasChoices.choices, default=SistemasChoices.PROFESSOR)
 
     class Meta:    
